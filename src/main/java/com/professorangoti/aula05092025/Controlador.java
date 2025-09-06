@@ -15,19 +15,12 @@ public class Controlador {
 
   @GetMapping("/megasena")
   public String GeraAposta(Model model) {
-    int n1 = (int) (Math.random() * 60) + 1;
-    int n2 = (int) (Math.random() * 60) + 1;
-    int n3 = (int) (Math.random() * 60) + 1;
-    int n4 = (int) (Math.random() * 60) + 1;
-    int n5 = (int) (Math.random() * 60) + 1;
-    int n6 = (int) (Math.random() * 60) + 1;
+    int[] numeros = new int[6];
+    for (int i = 0; i < 6; i++) {
+      numeros[i] = (int) (Math.random() * 60) + 1;
+    }
 
-    model.addAttribute("a", n1);
-    model.addAttribute("b", n2);
-    model.addAttribute("c", n3);
-    model.addAttribute("d", n4);
-    model.addAttribute("e", n5);
-    model.addAttribute("f", n6);
+    model.addAttribute("lista", numeros);
 
     return "aposta";
   }

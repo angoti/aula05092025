@@ -5,11 +5,6 @@
 <title>Meu primeiro thymeleaf</title>
 </head>
 <body>
-<p th:text="${a}">Alô mundo</p>
-<p th:text="${b}">Alô mundo</p>
-<p th:text="${c}">Alô mundo</p>
-<p th:text="${d}">Alô mundo</p>
-<p th:text="${e}">Alô mundo</p>
-<p th:text="${f}">Alô mundo</p>
+<span th:each="numero, indice : ${lista}" th:text="${indice.last} ? ${numero} : ${numero + ', '}">Alô mundo</span>
 </body>
 </html>
